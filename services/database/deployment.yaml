@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database
+  namespace: k1x-apps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database
+  template:
+    metadata:
+      labels:
+        app: database
+    spec:
+      containers:
+      - name: database
+        image: nginx:1.25
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 2000m
+            memory: 128Mi
+          limits:
+            cpu: 4000m
+            memory: 256Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: database
+  namespace: k1x-apps
+spec:
+  selector:
+    app: database
+  ports:
+  - port: 80
+    targetPort: 80
