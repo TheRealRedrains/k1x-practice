@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/cshelton831-lang/k1x-practice.git
+    repoURL: https://github.com/TheRealRedrains/k1x-practice.git
     targetRevision: main
     path: services/api
   destination:
