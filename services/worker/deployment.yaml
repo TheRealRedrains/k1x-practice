@@ -25,6 +25,10 @@ spec:
           limits:
             cpu: 200m
             memory: 256Mi
+      initContainers:
+      - name: init-check
+        image: busybox:1.35
+        command: ['sh', '-c', 'until nslookup database.k1x-apps.svc.cluster.local; do echo waiting for database; sleep 2; done']
 ---
 apiVersion: v1
 kind: Service

@@ -18,6 +18,12 @@ spec:
         image: nginx:1.25
         ports:
         - containerPort: 80
+        env:
+        - name: APP_ENV
+          valueFrom:
+            secretKeyRef:
+              name: api-secret
+              key: environment
         resources:
           requests:
             cpu: 100m
