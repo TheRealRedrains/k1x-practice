@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/TheRealRedrains/k1x-practice.git
-    targetRevision: feature/new-schema
+    targetRevision: main
     path: services/database
   destination:
     server: https://kubernetes.default.svc
