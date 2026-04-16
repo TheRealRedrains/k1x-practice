@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: nginx:1.99-broken
+        image: nginx:1.25
         ports:
         - containerPort: 80
         resources:
