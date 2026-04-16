@@ -12,7 +12,3 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: k1x-apps
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
